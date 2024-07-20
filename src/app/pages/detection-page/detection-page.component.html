@@ -1,1 +1,16 @@
-<p>detection-page works!</p>
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Subir Imagen</h2>
+  <input type="file" (change)="onFileSelected($event)" class="mb-4 p-2 border border-gray-300 rounded">
+
+  <div *ngIf="suggestedLocation" class="bg-gray-100 p-4 rounded mb-4">
+    <p>Sugerencia de ubicación: {{ suggestedLocation }}</p>
+    <button (click)="acceptSuggestion()" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Aceptar</button>
+    <button (click)="rejectSuggestion()" class="bg-red-500 text-white px-4 py-2 rounded">Rechazar</button>
+  </div>
+
+  <div>
+    <label class="block mb-2">Coordenadas Longitudinales</label>
+    <input [(ngModel)]="latitude" placeholder="Latitud" class="p-2 border border-gray-300 rounded mb-2 w-full">
+    <input [(ngModel)]="longitude" placeholder="Longitud" class="p-2 border border-gray-300 rounded w-full">
+  </div>
+</div>
