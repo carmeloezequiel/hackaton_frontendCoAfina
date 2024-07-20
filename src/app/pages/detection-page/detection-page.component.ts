@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import * as ExifReader from 'exifreader';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detection-page',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './detection-page.component.html',
   styleUrls: ['./detection-page.component.scss']
 })
